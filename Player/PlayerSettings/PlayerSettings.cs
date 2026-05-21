@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using Bomb;
 using UnityEngine;
 
@@ -39,23 +40,18 @@ namespace Player
        [Header("Уровень игрока")]
        [SerializeField] [Range(1, 5)] private int lvlPlayerMax;
 
+       
+
        [Header("Колличество бомб в инвентаре")]
        [SerializeField] [Range(1, 5)] private int numberBombPlayerInventory;
-       
-       
-       
+
+   
+
+
        [Header("Система использования бомб")] 
        
        [Header("Позиция с которой спавнится бомба")]
        [SerializeField] private Transform positionDropingBomb;
-
-       [Header("Префаб Бомбы")] 
-       [SerializeField] private GameObject bombPrefab;
-
-       [Header("Скрипт Настроек бомбы")] 
-       [SerializeField] private BombSettings _bombSettings;
-       
-       
 
        [Header("Кнопка на которую выбрасывается бомба")]
        [SerializeField] private KeyCode dropintBombKey = KeyCode.Space;
@@ -67,8 +63,27 @@ namespace Player
        private const int LvlPlayerUpdate = 1;
         
 
-
+            
+       
+            public SpriteRenderer PlayerSpriteUp => playerSpriteUP;
      
+            public SpriteRenderer PlayerSpriteDown => playerSpriteDOWN;
+     
+            public SpriteRenderer PlayerSpriteLeft => playerSpriteLEFT;
+     
+            public SpriteRenderer PlayerSpriteRight => playerSpriteRIGHT;
       
+            public CharacterController PlayerController => playerController;
+            
+            public float GetMoveSpeed =>  moveSpeed;
+            public int GetPlayerMax => lvlPlayerMax;
+            public int NumberBombPlayerInventory
+            {
+                get => numberBombPlayerInventory;
+                set => numberBombPlayerInventory = value;
+            }
+          
+            public Transform GetPositionDropingBomb => positionDropingBomb;
+
     }
 }

@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Bomb
 {
     public interface IExplosion
     {
-        void TileExplosion(Vector3 vectorExplosion, int lvlBomb, GameObject prefabExplosion, Transform positionStartExplosion , RaycastHit2D hit2D);
-        void DestroyGameObjectBomb(GameObject bombPrefab, float timeExplosionBomb);
+
+        void BombExplose(List<GameObject>prefabBomb,List<GameObject>prefabExplose ,Transform positionPrefabBomb, RaycastHit2D raycastHit);
+        
+        
     }
 }
